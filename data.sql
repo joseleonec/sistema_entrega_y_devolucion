@@ -63,7 +63,24 @@ INSERT INTO public.solicitud_devolucion
 VALUES (4, 'aprobado', TO_TIMESTAMP(To_char(now(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 3, 3, 4, 'Producto EQUIVOCADO');
 INSERT INTO public.solicitud_devolucion	
 VALUES (5, 'aprobado', TO_TIMESTAMP(To_char(now(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 4, 4, 2, 'Producto Roto');
+
+INSERT INTO public.solicitud_devolucion	
+VALUES (6, 'aprobado', TO_TIMESTAMP(To_char(now(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 5, 5, 5, 'Producto EQUIVOCADO');
+INSERT INTO public.solicitud_devolucion	
+VALUES (7, 'aprobado', TO_TIMESTAMP(To_char(now(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 6, 6, 6, 'Producto Roto');
+INSERT INTO public.solicitud_devolucion	
+VALUES (8, 'aprobado', TO_TIMESTAMP(To_char(now(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 7, 7, 7, 'Producto Roto');
+
 -- Tabla nota_de_credito
 INSERT INTO public.nota_de_credito(
 	id_nota, autorizacion_sri, id_solicitud, monto)
-	VALUES (?, ?, ?, ?);
+	VALUES (1, 2, 4, 20);
+INSERT INTO public.nota_de_credito VALUES (2, 3, 5, 100);
+INSERT INTO public.nota_de_credito VALUES (3, 1, 3, 30);
+
+-- Tabla sustitucion
+INSERT INTO public.sustitucion(
+	id_sustitucion, id_producto_sustituto, id_solicitud, monto)
+	VALUES (1, 11, 6, 52);
+INSERT INTO public.sustitucion VALUES (2, 12, 7, 32);
+INSERT INTO public.sustitucion VALUES (3, 13, 8, 28);
