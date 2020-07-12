@@ -72,9 +72,9 @@ INSERT INTO PUBLIC.ENTREGA_EN_BODEGA(
 INSERT INTO PUBLIC.SOLICITUD_DEVOLUCION(
 	ID_SOLICITUD, ESTADO_APROBACION, FECHA_DE_REGISTRO, ID_CLIENTE, ID_FACTURA, ID_PRODUCTO, MOTIVO_DEVOLUCION)
 	VALUES (1, 'RECHAZADO',  '2016-06-01 00:00', 1, 1, 1, 'PRODUCTO ROTO');
-INSERT INTO PUBLIC.SOLICITUD_DEVOLUCION	
-VALUES (2, 'RECHAZADO', '2020-07-06 00:00', 1, 1, 1, 'PRODUCTO ROTO');
-
+INSERT INTO PUBLIC.SOLICITUD_DEVOLUCION	(
+	ID_SOLICITUD, ESTADO_APROBACION, FECHA_DE_REGISTRO, ID_CLIENTE, ID_FACTURA, ID_PRODUCTO, MOTIVO_DEVOLUCION)
+	VALUES (2, 'RECHAZADO', '2020-07-06 00:00', 1, 1, 1, 'PRODUCTO ROTO');
 INSERT INTO PUBLIC.SOLICITUD_DEVOLUCION	(
 	ID_SOLICITUD, ESTADO_APROBACION, FECHA_DE_REGISTRO, ID_CLIENTE, ID_FACTURA, ID_PRODUCTO, MOTIVO_DEVOLUCION)
 	VALUES (3, 'APROBADO', TO_TIMESTAMP(TO_CHAR(NOW(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 1, 2, 3, 'PRODUCTO EQUIVOCADO');
@@ -94,31 +94,31 @@ INSERT INTO PUBLIC.SOLICITUD_DEVOLUCION	(
 	ID_SOLICITUD, ESTADO_APROBACION, FECHA_DE_REGISTRO, ID_CLIENTE, ID_FACTURA, ID_PRODUCTO, MOTIVO_DEVOLUCION)	
 	VALUES (8, 'APROBADO', TO_TIMESTAMP(TO_CHAR(NOW(), 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'), 7, 7, 7, 'PRODUCTO ROTO');
 
--- TABLA SOLICITUD APROBADA
-INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (1, 6);
-INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (2, 7);
-INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (3, 8);
-INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (4, 3);
-INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (5, 4);
-INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (6, 5);
-
 -- TABLA NOTA_DE_CREDITO
 INSERT INTO public.nota_de_credito(
-	id_nota, autorizacion_sri, monto, id_solicitud_aprobada)
-	VALUES (1, 2, 20, 1);
+	id_nota, autorizacion_sri, monto, id_solicitud) 
+	VALUES (1, 2, 20, 6);
 INSERT INTO PUBLIC.NOTA_DE_CREDITO(
-	id_nota, autorizacion_sri, monto, id_solicitud_aprobada) VALUES (2, 3, 100, 2);
+	id_nota, autorizacion_sri, monto, id_solicitud) VALUES (2, 3, 100, 7);
 INSERT INTO PUBLIC.NOTA_DE_CREDITO(
-	id_nota, autorizacion_sri, monto, id_solicitud_aprobada) VALUES (3, 1, 30, 3);
+	id_nota, autorizacion_sri, monto, id_solicitud) VALUES (3, 1, 30, 8);
 
 -- TABLA SUSTITUCION
 INSERT INTO PUBLIC.SUSTITUCION(
-	id_sustitucion, id_producto_sustituto, id_solicitud_aprobada,  monto)
-	VALUES (1, 11, 4, 52);
+	id_sustitucion, id_producto_sustituto, id_solicitud, monto)
+	VALUES (1, 11, 3, 52);
 INSERT INTO PUBLIC.SUSTITUCION(
-	id_sustitucion, id_producto_sustituto, id_solicitud_aprobada,  monto) VALUES (2, 12, 5, 32);
+	id_sustitucion, id_producto_sustituto, id_solicitud, monto) VALUES (2, 12, 4, 32);
 INSERT INTO PUBLIC.SUSTITUCION(
-	id_sustitucion, id_producto_sustituto, id_solicitud_aprobada,  monto) VALUES (3, 13, 6, 28);
+	id_sustitucion, id_producto_sustituto, id_solicitud, monto) VALUES (3, 13, 5, 28);
+
+-- TABLA SOLICITUD APROBADA
+--INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (1, 6);
+--INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (2, 7);
+--INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (3, 8);
+--INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (4, 3);
+--INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (5, 4);
+--INSERT INTO public.solicitud_aprobada(id_solicitud_aprobada, id_solicitud) VALUES (6, 5);
 
 -- TABLA SOLICITUD RECHAZADA
 INSERT INTO public.solicitud_rechazada(
