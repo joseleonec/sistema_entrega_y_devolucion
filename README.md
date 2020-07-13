@@ -1,2 +1,15 @@
-# sistema_entrega_y_devolucion
-Subsistema de entrega y devolución de pedidos
+# SUPER V UDEC
+
+# Subsistema entrega y devolucion 
+Documentos relativos a la Base de Datos
+
+# Desarrolladores
+JOSE LUIS LEON CARRION, (jose.leonc97@ucuenca.ec) 
+
+# Docente
+
+Ing. CARLOS VILLIE MOROCHO ZURITA, (villie.morocho@ucuenca.edu.ec)
+
+# Facultad de Ingeniería
+# Universidad de Cuenca
+Este módulo fue desarrollado como parte de la materia Base de Datos II en el periodo marzo-julio 2020
